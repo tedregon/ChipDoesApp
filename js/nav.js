@@ -1,11 +1,8 @@
 // Navigation — Figma node 166:901
-// Train = home + portfolio reviewer. Make = make hub.
+// Home = intro. Train = mentorship + portfolio reviewer. Portfolio = portfolio hub.
 
 (function () {
     'use strict';
-
-    var BOOKING_URL =
-        'https://calendar.google.com/calendar/appointments/schedules/AcZssZ2ngDjDjEkZRYRdnUWGRnEp_bHH0pHWHMoQcC44yyCx0xWg_OhgtikV1RYxwUQ8_6A964BAnH5z?gv=true';
 
     function getPathDepth() {
         var path = window.location.pathname;
@@ -26,9 +23,11 @@
             .replace(/\/index\.html?$/i, '')
             .replace(/\/$/, '') || '/';
         var segments = path.split('/').filter(Boolean);
-        if (segments.length === 0) return 'train';
+        if (segments.length === 0) return 'home';
         var first = segments[0];
-        if (first === 'make') return 'make';
+        if (first === 'train') return 'train';
+        if (first === 'portfolio') return 'portfolio';
+        if (first === 'make') return 'portfolio';
         if (first === 'portfolioreviewer') return 'train';
         if (first === 'hire') return 'hire';
         if (first === 'talk') return 'talk';
@@ -47,7 +46,8 @@
     function generateNav() {
         var prefix = getPathPrefix();
         var homeLink = prefix ? prefix + 'index.html' : 'index.html';
-        var makeLink = prefix + 'make/';
+        var trainLink = prefix + 'train/';
+        var portfolioLink = prefix + 'portfolio/';
         var hireLink = prefix + 'hire/';
         var talkLink = prefix + 'talk/';
         var aboutLink = prefix + 'about/';
@@ -62,7 +62,7 @@
             '" class="navbar-brand">design with chip</a>' +
             '    <ul class="navbar-nav">' +
             '      <li><a href="' +
-            homeLink +
+            trainLink +
             '" ' +
             linkAttrs('train', active) +
             ' data-nav="train">Train</a></li>' +
@@ -72,10 +72,10 @@
             // linkAttrs('hire', active) +
             // ' data-nav="hire">Hire</a></li>' +
             // '      <li><a href="' +
-            makeLink +
+            portfolioLink +
             '" ' +
-            linkAttrs('make', active) +
-            ' data-nav="make">Make</a></li>' +
+            linkAttrs('portfolio', active) +
+            ' data-nav="portfolio">Portfolio</a></li>' +
             '      <li><a href="' +
             // talkLink +
             // '" ' +
@@ -86,14 +86,11 @@
             '" ' +
             linkAttrs('about', active) +
             ' data-nav="about">About</a></li>' +
-            '      <li><a href="https://www.linkedin.com/in/chip-rian/" target="_blank" rel="noopener noreferrer" class="navbar-link navbar-link--external">Contact <img src="' +
-            imgPath +
-            '" alt="" class="navbar-link-icon" width="20" height="20"></a></li>' +
             '    </ul>' +
             '    <div class="navbar-cta-wrap">' +
-            '      <a href="' +
-            BOOKING_URL +
-            '" class="navbar-book-btn">Book a coaching call</a>' +
+            '      <a href="https://www.linkedin.com/in/chip-rian/" target="_blank" rel="noopener noreferrer" class="navbar-link navbar-link--external">Get in contact <img src="' +
+            imgPath +
+            '" alt="" class="navbar-link-icon" width="20" height="20"></a>' +
             '    </div>' +
             '  </div>' +
             '</nav>'
