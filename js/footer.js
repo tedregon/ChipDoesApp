@@ -3,30 +3,8 @@
   'use strict';
 
   var ICONS = [
-    {
-      label: 'LinkedIn',
-      filename: 'icon-linkedin.svg',
-    },
-    {
-      label: 'X',
-      filename: 'icon-x.svg',
-    },
-    {
-      label: 'Instagram',
-      filename: 'icon-instagram.svg',
-    },
-    {
-      label: 'TikTok',
-      filename: 'icon-tiktok.svg',
-    },
-    {
-      label: 'Facebook',
-      filename: 'icon-facebook.svg',
-    },
-    {
-      label: 'Threads',
-      filename: 'icon-threads.svg',
-    },
+    { label: 'LinkedIn', file: 'icon-linkedin.svg' },
+    { label: 'X', file: 'icon-x.svg' },
   ];
 
   function getPathDepth() {
@@ -43,6 +21,15 @@
     return depth > 0 ? '../'.repeat(depth) : '';
   }
 
+  function generateIcon(icon, prefix) {
+    var url = prefix + 'img/footer/' + icon.file;
+    return (
+      '<span class="site-footer-social-icon" aria-hidden="true" style="--icon-url: url(\'' +
+      url +
+      '\')"></span>'
+    );
+  }
+
   function generateFooterHtml() {
     var prefix = getPathPrefix();
     var buttons = ICONS.map(function (icon) {
@@ -50,11 +37,7 @@
         '<button type="button" class="site-footer-social-btn" aria-label="' +
         icon.label +
         '">' +
-        '<img src="' +
-        prefix +
-        'img/footer/' +
-        icon.filename +
-        '" alt="" aria-hidden="true" loading="lazy">' +
+        generateIcon(icon, prefix) +
         '</button>'
       );
     }).join('');
@@ -83,4 +66,3 @@
     initFooter();
   }
 })();
-

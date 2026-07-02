@@ -48,6 +48,7 @@ Apply this structure from top to bottom:
 - Make the next step obvious and low-friction.
 
 ## Copy Rules
+- Default voice: matter-of-fact. See [matter-of-fact-copy](../matter-of-fact-copy/SKILL.md) for tone rules before writing.
 - Lead with outcomes before features.
 - Prefer specific claims over vague adjectives.
 - Keep headers short and concrete.

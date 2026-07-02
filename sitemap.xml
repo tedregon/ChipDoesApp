@@ -12,8 +12,15 @@
     </url>
 
     <url>
-        <loc>https://designwithchip.com/make/</loc>
-        <lastmod>2026-03-27</lastmod>
+        <loc>https://designwithchip.com/train/</loc>
+        <lastmod>2026-07-01</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <url>
+        <loc>https://designwithchip.com/portfolio/</loc>
+        <lastmod>2026-07-01</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
