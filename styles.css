@@ -77,11 +77,11 @@
     --font-size-3xl: 28px;
     --font-size-4xl: 48px;
     
-    /* Font Weights — Inter reads heavy on dark UI; scale shifted lighter */
-    --font-weight-normal: 350;
-    --font-weight-medium: 450;
-    --font-weight-semibold: 550;
-    --font-weight-bold: 650;
+    /* Font Weights — Inter below 400 renders too thin in Chrome */
+    --font-weight-normal: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
     
     /* Line Heights */
     --line-height-tight: 16px;
@@ -2488,10 +2488,10 @@ body.page-train .book-cta-content {
         --font-size-4xl: 24px;
         
         /* Font Weights */
-        --font-weight-normal: 350;
-        --font-weight-medium: 450;
-        --font-weight-semibold: 550;
-        --font-weight-bold: 650;
+        --font-weight-normal: 400;
+        --font-weight-medium: 500;
+        --font-weight-semibold: 600;
+        --font-weight-bold: 700;
         
         /* Line Heights */
         --line-height-tight: 16px;
